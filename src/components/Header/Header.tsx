@@ -8,12 +8,12 @@ import {
 } from '.';
 import CompanyLogo from '../../public/Icons/mettzerLogo.png';
 import Redirect from '../../utils/Redirect';
+import { COMPANY_URL } from '../../utils/urls/URL';
 
 function Header() {
   const router = useRouter();
   const redirect = new Redirect(router);
 
-  const companyUrl = 'https://www.mettzer.com/';
   const openInNewTab = (url: string) => {
     window.open(url, '_blank', 'noopener,noreferrer');
   };
@@ -21,7 +21,7 @@ function Header() {
   return (
     <HeaderContainer>
       <HeaderLogo
-        onClick={() => openInNewTab(companyUrl)}
+        onClick={() => openInNewTab(COMPANY_URL)}
         src={CompanyLogo.src}
       />
       <HeaderButtonsContainer>
