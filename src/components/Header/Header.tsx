@@ -6,8 +6,12 @@ function Header() {
     <HeaderContainer>
       <h1>Mettzer</h1>
       <div>
-        <HeaderButton type="button" aria-label="home-page" />
-        <HeaderButton type="button" aria-label="favorite-page" />
+        <HeaderButton type="button" aria-label="home-page">
+          Home
+        </HeaderButton>
+        <HeaderButton type="button" aria-label="favorite-page">
+          Favorites
+        </HeaderButton>
       </div>
     </HeaderContainer>
   );

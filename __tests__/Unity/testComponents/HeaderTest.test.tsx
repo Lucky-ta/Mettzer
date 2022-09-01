@@ -8,9 +8,9 @@ describe('Test Header component', () => {
     render(<Header />);
   });
 
-  it('Header component must have Company title', () => {
-    const headerTitle = screen.getByText('Mettzer');
-    expect(headerTitle).toBeInTheDocument();
+  it('Header component must have Company logo image', () => {
+    const companyImage = screen.getByRole('img');
+    expect(companyImage).toBeInTheDocument();
   });
 
   it('Header component must have 2 redirect buttons', () => {
