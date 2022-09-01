@@ -1,18 +1,37 @@
+import { useRouter } from 'next/router';
 import React from 'react';
-import { HeaderContainer, HeaderButton } from '.';
+import {
+  HeaderContainer,
+  HeaderButton,
+  HeaderLogo,
+  HeaderButtonsContainer,
+} from '.';
+import CompanyLogo from '../../public/Icons/mettzerLogo.png';
+import Redirect from '../../utils/Redirect';
 
 function Header() {
+  const router = useRouter();
+  const redirect = new Redirect(router);
+
   return (
     <HeaderContainer>
-      <h1>Mettzer</h1>
-      <div>
-        <HeaderButton type="button" aria-label="home-page">
+      <HeaderLogo src={CompanyLogo.src} />
+      <HeaderButtonsContainer>
+        <HeaderButton
+          onClick={() => redirect.homePage()}
+          type="button"
+          aria-label="home-page"
+        >
           Home
         </HeaderButton>
-        <HeaderButton type="button" aria-label="favorite-page">
+        <HeaderButton
+          onClick={() => redirect.favoritePage()}
+          type="button"
+          aria-label="favorite-page"
+        >
           Favorites
         </HeaderButton>
-      </div>
+      </HeaderButtonsContainer>
     </HeaderContainer>
   );
 }
