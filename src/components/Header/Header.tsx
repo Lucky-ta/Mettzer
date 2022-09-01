@@ -13,9 +13,17 @@ function Header() {
   const router = useRouter();
   const redirect = new Redirect(router);
 
+  const companyUrl = 'https://www.mettzer.com/';
+  const openInNewTab = (url: string) => {
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <HeaderContainer>
-      <HeaderLogo src={CompanyLogo.src} />
+      <HeaderLogo
+        onClick={() => openInNewTab(companyUrl)}
+        src={CompanyLogo.src}
+      />
       <HeaderButtonsContainer>
         <HeaderButton
           onClick={() => redirect.homePage()}
