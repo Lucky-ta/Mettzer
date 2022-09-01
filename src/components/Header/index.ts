@@ -7,6 +7,7 @@ export const HeaderContainer = styled.header`
     padding-top: 0.6em;
     padding-bottom: 0.6em;
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+
 `;
 
 export const HeaderLogo = styled.img`
@@ -33,6 +34,8 @@ export const HeaderButton = styled.button`
     border: none;
     font-size: 1em;
     font-weight: 700;
+    transition: 0.2s all;
+
 
     &&:hover{
         color: #00db87;
