@@ -1,10 +1,15 @@
 import React from 'react';
+import { HeaderContainer, HeaderButton } from '.';
 
 function Header() {
   return (
-    <div>
-      <h1>Header</h1>
-    </div>
+    <HeaderContainer>
+      <h1>Mettzer</h1>
+      <div>
+        <HeaderButton type="button" aria-label="home-page" />
+        <HeaderButton type="button" aria-label="favorite-page" />
+      </div>
+    </HeaderContainer>
   );
 }
 

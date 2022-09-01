@@ -14,17 +14,17 @@ describe('Test Header component', () => {
   });
 
   it('Header component must have 2 redirect buttons', () => {
-    const redirectButtons = screen.getByRole('button');
-    expect(redirectButtons).toBeInTheDocument();
+    const redirectButtons = screen.getAllByRole('button');
+    expect(redirectButtons).toHaveLength(2);
   });
 
   it('Header component must have a redirect Favorite page button', () => {
-    const favoritePageButton = screen.getByAltText('favorite-page');
+    const favoritePageButton = screen.getByLabelText('favorite-page');
     expect(favoritePageButton).toBeInTheDocument();
   });
 
   it('Header component must have a redirect Home page button', () => {
-    const homePageButton = screen.getByAltText('home-page');
+    const homePageButton = screen.getByLabelText('home-page');
     expect(homePageButton).toBeInTheDocument();
   });
 });
