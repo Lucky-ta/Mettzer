@@ -4,6 +4,6 @@ export const FooterContaier = styled.footer`
 
 `;
 
-export const FooterButtons = styled.button`
+export const FooterButton = styled.button`
 
 `;
