@@ -1,11 +1,11 @@
 import React from 'react';
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
-import SearchInput from '../../../src/components/SearchInput/SearchInput';
+import Form from '../../../src/components/Form/Form';
 
 describe('Test Form component', () => {
   beforeEach(() => {
-    render(<SearchInput />);
+    render(<Form />);
   });
 
   it('Form component must have a input', () => {

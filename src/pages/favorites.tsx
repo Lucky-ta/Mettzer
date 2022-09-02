@@ -1,13 +1,13 @@
 import React from 'react';
 import Footer from '../components/Footer/Footer';
 import Header from '../components/Header/Header';
-import SearchInput from '../components/SearchInput/SearchInput';
+import Form from '../components/Form/Form';
 
 function Favorites() {
   return (
     <div>
       <Header />
-      <SearchInput />
+      <Form />
       <Footer />
     </div>
   );
