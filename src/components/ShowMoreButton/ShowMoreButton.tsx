@@ -1,7 +1,8 @@
 import React from 'react';
+import ShowMoreButtonElement from '.';
 
 function ShowMoreButton() {
-  return <button type="button" />;
+  return <ShowMoreButtonElement type="button">Show more</ShowMoreButtonElement>;
 }
 
 export default ShowMoreButton;
