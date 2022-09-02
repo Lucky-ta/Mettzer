@@ -1,8 +1,8 @@
 import React from 'react';
-import LoadingContainer from '.';
+import LoadingElement from '.';
 
 function Loading() {
-  return <LoadingContainer>Loading...</LoadingContainer>;
+  return <LoadingElement>Loading...</LoadingElement>;
 }
 
 export default Loading;

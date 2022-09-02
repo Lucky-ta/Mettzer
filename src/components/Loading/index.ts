@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-const LoadingContainer = styled.h2`
+const LoadingElement = styled.h2`
     margin: auto;
 `;
 
-export default LoadingContainer;
+export default LoadingElement;
