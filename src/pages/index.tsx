@@ -7,6 +7,7 @@ import { CardHomeContainer } from '../components/Card';
 import GlobalContainer from '../styles/Index';
 import MyContext from '../contexts/MyContext';
 import Loading from '../components/Loading/Loading';
+import ShowMoreButton from '../components/ShowMoreButton/ShowMoreButton';
 
 function Home() {
   const { articles, isPageLoading } = useContext(MyContext);
@@ -19,7 +20,7 @@ function Home() {
         { isPageLoading ? (<Loading />) : (
           articles.map((article) => <Card article={article} />)
         )}
-
+        { articles.length !== 0 && (<ShowMoreButton />) }
       </CardHomeContainer>
       <Footer />
     </GlobalContainer>
