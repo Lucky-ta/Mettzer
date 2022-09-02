@@ -9,7 +9,7 @@ type MyProviderPropsShape = {
 function MyPovider({ children }: MyProviderPropsShape) {
   const [articles, setArticles] = useState([{}]);
 
-  const data = {
+  const data: any = {
     articles,
     setArticles,
   };
