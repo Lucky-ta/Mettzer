@@ -1,7 +1,8 @@
 import React from 'react';
+import Input from '.';
 
 function SearchInput() {
-  return <input placeholder="Article name" type="text" />;
+  return <Input placeholder="Article name" type="text" />;
 }
 
 export default SearchInput;

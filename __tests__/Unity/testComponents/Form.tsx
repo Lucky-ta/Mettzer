@@ -3,13 +3,18 @@ import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import SearchInput from '../../../src/components/SearchInput/SearchInput';
 
-describe('Test Search Input component', () => {
+describe('Test Form component', () => {
   beforeEach(() => {
     render(<SearchInput />);
   });
 
-  it('Search Input component follow place holder text: \'Article name\'', () => {
+  it('Form component must have a input', () => {
     const searchInput = screen.getByPlaceholderText('Article name');
     expect(searchInput).toBeInTheDocument();
+  });
+
+  it('Form component must have a search button', () => {
+    const searchButton = screen.getByRole('button');
+    expect(searchButton).toBeInTheDocument();
   });
 });
