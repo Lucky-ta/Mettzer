@@ -6,7 +6,7 @@ import Card from '../components/Card/Card';
 import { CardHomeContainer } from '../components/Card';
 import GlobalContainer from '../styles/Index';
 import MyContext from '../contexts/MyContext';
-import Loading from '../components/Loading';
+import Loading from '../components/Loading/Loading';
 
 function Home() {
   const { articles, isPageLoading } = useContext(MyContext);
@@ -16,7 +16,7 @@ function Home() {
       <Header />
       <Form />
       <CardHomeContainer>
-        { isPageLoading ? (<Loading>Loading...</Loading>) : (
+        { isPageLoading ? (<Loading />) : (
           articles.map((article) => <Card article={article} />)
         )}
 
