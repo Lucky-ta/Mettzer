@@ -1,5 +1,5 @@
-import React from "react";
-import { AiOutlineStar } from "react-icons/ai";
+import React from 'react';
+import { AiOutlineStar } from 'react-icons/ai';
 import {
   CardAuthor,
   CardContainer,
@@ -11,7 +11,7 @@ import {
   CardType,
   CardUrl,
   FavoriteButtonContainer,
-} from ".";
+} from '.';
 
 function Card() {
   return (
@@ -19,23 +19,23 @@ function Card() {
       <CardHeader>
         <CardFlexContainer>
           <CardTitle>HIV</CardTitle>
-          <CardAuthor>Lucas</CardAuthor>
+          <CardAuthor aria-label="author">Lucas</CardAuthor>
         </CardFlexContainer>
         <FavoriteButtonContainer>
-          <CardType>{`Type: ${'Search'}`}</CardType>
-          <CardFavoriteButton type="button">
+          <CardType aria-label="type">{`Type: ${'Search'}`}</CardType>
+          <CardFavoriteButton aria-label="button" type="button">
             <AiOutlineStar />
           </CardFavoriteButton>
         </FavoriteButtonContainer>
       </CardHeader>
       <CardFlexContainer>
-        <CardDescription>
+        <CardDescription aria-label="description">
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam
           voluptatem perspiciatis nam quam? Aspernatur at cum, aut fugit
           suscipit iure labore temporibus tenetur ut! Sed sequi debitis vel est
           a!
         </CardDescription>
-        <CardUrl>www.google.com</CardUrl>
+        <CardUrl aria-label="url">www.google.com</CardUrl>
       </CardFlexContainer>
     </CardContainer>
   );
