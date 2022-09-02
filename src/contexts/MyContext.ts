@@ -1,16 +1,19 @@
+/* eslint-disable no-unused-vars */
 import { createContext } from 'react';
 
 export type ArticleShape = {
     authors: string;
     description: string;
     title: string;
-    type: string;
-    urls: string
+    topics : string;
+    fulltextIdentifier: string
 }
 
 type MyContextDataShape = {
-    articles: ArticleShape[],
-    setArticles: () => void,
+    articles: ArticleShape[];
+    setArticles: (articles: ArticleShape[]) => void;
+    isPageLoading: boolean;
+    setIsPageLoading: (value: boolean) => void;
 }
 
 const initialData: MyContextDataShape = {
@@ -18,11 +21,12 @@ const initialData: MyContextDataShape = {
     authors: '',
     description: '',
     title: '',
-    type: '',
-    urls: '',
+    topics: '',
+    fulltextIdentifier: '',
   }],
   setArticles: () => {},
-
+  isPageLoading: false,
+  setIsPageLoading: () => {},
 };
 
 const MyContext = createContext<MyContextDataShape>(initialData);

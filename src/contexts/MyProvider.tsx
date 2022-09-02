@@ -7,11 +7,14 @@ type MyProviderPropsShape = {
 }
 
 function MyPovider({ children }: MyProviderPropsShape) {
-  const [articles, setArticles] = useState([{}]);
+  const [articles, setArticles] = useState([]);
+  const [isPageLoading, setIsPageLoading] = useState(false);
 
   const data: any = {
     articles,
     setArticles,
+    isPageLoading,
+    setIsPageLoading,
   };
 
   return (

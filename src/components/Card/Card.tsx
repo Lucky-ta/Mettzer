@@ -12,17 +12,22 @@ import {
   CardUrl,
   FavoriteButtonContainer,
 } from '.';
+import { ArticleShape } from '../../contexts/MyContext';
 
-function Card() {
+type CardPropsShape = {
+  article: ArticleShape;
+};
+
+function Card({ article }: CardPropsShape) {
   return (
     <CardContainer>
       <CardHeader>
         <CardFlexContainer>
-          <CardTitle>HIV</CardTitle>
-          <CardAuthor aria-label="author">Lucas</CardAuthor>
+          <CardTitle>{article.title}</CardTitle>
+          <CardAuthor aria-label="author">{article.authors}</CardAuthor>
         </CardFlexContainer>
         <FavoriteButtonContainer>
-          <CardType aria-label="type">{`Type: ${'Search'}`}</CardType>
+          <CardType aria-label="type">{article.topics}</CardType>
           <CardFavoriteButton aria-label="button" type="button">
             <AiOutlineStar />
           </CardFavoriteButton>
@@ -30,12 +35,12 @@ function Card() {
       </CardHeader>
       <CardFlexContainer>
         <CardDescription aria-label="description">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam
-          voluptatem perspiciatis nam quam? Aspernatur at cum, aut fugit
-          suscipit iure labore temporibus tenetur ut! Sed sequi debitis vel est
-          a!
+          {article.description}
         </CardDescription>
-        <CardUrl aria-label="url">www.google.com</CardUrl>
+        <CardUrl aria-label="url">
+          {' '}
+          {article.fulltextIdentifier}
+        </CardUrl>
       </CardFlexContainer>
     </CardContainer>
   );
