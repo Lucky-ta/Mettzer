@@ -5,8 +5,6 @@ export const FooterContaier = styled.footer`
     justify-content: space-around;
     width: 100%;
     background-color: #00db87;
-    position: fixed;
-    bottom: 0;
 `;
 
 export const FooterButton = styled.button`
