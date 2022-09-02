@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-no-constructed-context-values */
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import MyContext from './MyContext';
 
 type MyProviderPropsShape = {
@@ -9,13 +9,25 @@ type MyProviderPropsShape = {
 function MyPovider({ children }: MyProviderPropsShape) {
   const [articles, setArticles] = useState([]);
   const [isPageLoading, setIsPageLoading] = useState(false);
+  const [isFavorite, setIsFavorite] = useState(false);
 
   const data: any = {
     articles,
     setArticles,
     isPageLoading,
     setIsPageLoading,
+    isFavorite,
+    setIsFavorite,
   };
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const sotragedFavorites = localStorage.getItem('favoritesArticles');
+      if (!sotragedFavorites) {
+        localStorage.setItem('favoritesArticles', JSON.stringify([]));
+      }
+    }
+  });
 
   return (
     <MyContext.Provider value={data}>

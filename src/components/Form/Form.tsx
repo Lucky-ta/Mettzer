@@ -13,7 +13,6 @@ function Form() {
     const response = await searchArticle(formData);
     if (response.status === 'OK') {
       setIsPageLoading(false);
-      console.log(response.data);
       return setArticles(response.data);
     }
     setIsPageLoading(false);

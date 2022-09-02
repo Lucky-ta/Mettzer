@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { AiOutlineStar } from 'react-icons/ai';
 import {
   CardAuthor,
@@ -12,13 +12,19 @@ import {
   CardUrl,
   FavoriteButtonContainer,
 } from '.';
-import { ArticleShape } from '../../contexts/MyContext';
+import MyContext, { ArticleShape } from '../../contexts/MyContext';
 
 type CardPropsShape = {
   article: ArticleShape;
 };
 
 function Card({ article }: CardPropsShape) {
+  const { isFavorite, setIsFavorite } = useContext(MyContext);
+
+  const handleFavoriteButton = () => {
+    setIsFavorite(!isFavorite);
+  };
+
   return (
     <CardContainer>
       <CardHeader>
@@ -28,7 +34,11 @@ function Card({ article }: CardPropsShape) {
         </CardFlexContainer>
         <FavoriteButtonContainer>
           <CardType aria-label="type">{article.topics}</CardType>
-          <CardFavoriteButton aria-label="button" type="button">
+          <CardFavoriteButton
+            onClick={handleFavoriteButton}
+            aria-label="button"
+            type="button"
+          >
             <AiOutlineStar />
           </CardFavoriteButton>
         </FavoriteButtonContainer>
