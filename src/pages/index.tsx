@@ -25,8 +25,8 @@ function Home() {
         { isPageLoading ? (<Loading />) : (
           articles.slice(0, visible).map((article) => <Card article={article} />)
         )}
-        { articles.length !== 0 && (<ShowMoreButton showMoreFunction={showMore} />) }
       </CardHomeContainer>
+      { articles.length !== 0 && (<ShowMoreButton showMoreFunction={showMore} />) }
       <Footer />
     </GlobalContainer>
   );

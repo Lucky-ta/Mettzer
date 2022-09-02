@@ -2,11 +2,13 @@ import styled from 'styled-components';
 
 export const CardHomeContainer = styled.main`
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
     margin: 1.2em;
     margin-top: 3.6em;
     padding-bottom: 5.3em;
     gap: 1.4em;
+    text-align: start;
+
 `;
 
 export const CardContainer = styled.div`

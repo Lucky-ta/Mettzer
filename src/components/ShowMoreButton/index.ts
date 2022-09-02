@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 
 const ShowMoreButtonElement = styled.button`
-    margin: auto;
-    bottom: 0;
+    margin-bottom: 5em;
     background: none;
     border: none;
 

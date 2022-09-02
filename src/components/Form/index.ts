@@ -28,4 +28,8 @@ export const FormButton = styled.button`
     margin-left: 1em;
 
     font-size: 1.4em;
+
+    &&:hover {
+        cursor: pointer;
+    }
 `;
