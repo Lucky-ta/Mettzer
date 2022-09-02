@@ -4,6 +4,7 @@ const searchArticle = async (articleName: string) => {
   try {
     const response = await Api.get(`/articles/search/${articleName}`, {
       params: {
+        pageSize: 100,
         apiKey: process.env.SECRET_API_KEY,
       },
     });

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Footer from '../components/Footer/Footer';
 import Header from '../components/Header/Header';
 import Form from '../components/Form/Form';
@@ -10,7 +10,12 @@ import Loading from '../components/Loading/Loading';
 import ShowMoreButton from '../components/ShowMoreButton/ShowMoreButton';
 
 function Home() {
+  const [visible, setVisible] = useState(5);
   const { articles, isPageLoading } = useContext(MyContext);
+
+  const showMore = () => {
+    setVisible(visible + 5);
+  };
 
   return (
     <GlobalContainer>
@@ -18,9 +23,9 @@ function Home() {
       <Form />
       <CardHomeContainer>
         { isPageLoading ? (<Loading />) : (
-          articles.map((article) => <Card article={article} />)
+          articles.slice(0, visible).map((article) => <Card article={article} />)
         )}
-        { articles.length !== 0 && (<ShowMoreButton />) }
+        { articles.length !== 0 && (<ShowMoreButton showMoreFunction={showMore} />) }
       </CardHomeContainer>
       <Footer />
     </GlobalContainer>

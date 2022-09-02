@@ -1,8 +1,16 @@
 import React from 'react';
 import ShowMoreButtonElement from '.';
 
-function ShowMoreButton() {
-  return <ShowMoreButtonElement type="button">Show more</ShowMoreButtonElement>;
+type ShowMoreButtonPropsShape = {
+  showMoreFunction: () => void;
+};
+
+function ShowMoreButton({ showMoreFunction }: ShowMoreButtonPropsShape) {
+  return (
+    <ShowMoreButtonElement onClick={showMoreFunction} type="button">
+      Show more
+    </ShowMoreButtonElement>
+  );
 }
 
 export default ShowMoreButton;
