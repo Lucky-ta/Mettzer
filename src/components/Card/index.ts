@@ -3,10 +3,10 @@ import styled from 'styled-components';
 export const CardHomeContainer = styled.main`
     display: grid;
     grid-template-columns: 1fr;
-    margin: 1em;
+    margin: 1.2em;
     margin-top: 3.6em;
+    padding-bottom: 5.3em;
     gap: 1.4em;
-
 `;
 
 export const CardContainer = styled.div`
@@ -21,7 +21,6 @@ export const CardContainer = styled.div`
 `;
 
 export const CardTitle = styled.h2`
-
 `;
 
 export const CardAuthor = styled.p`
@@ -41,6 +40,8 @@ export const CardDescription = styled.p`
 
 export const CardUrl = styled.p`
     font-size: 0.9em;
+    margin: auto;
+    margin-left: 0;
     margin-top: 1em;
 
     &&:hover {

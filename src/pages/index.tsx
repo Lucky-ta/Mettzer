@@ -4,10 +4,11 @@ import Header from '../components/Header/Header';
 import Form from '../components/Form/Form';
 import Card from '../components/Card/Card';
 import { CardHomeContainer } from '../components/Card';
+import GlobalContainer from '../styles/Index';
 
 function Home() {
   return (
-    <div>
+    <GlobalContainer>
       <Header />
       <Form />
       <CardHomeContainer>
@@ -19,7 +20,7 @@ function Home() {
         <Card />
       </CardHomeContainer>
       <Footer />
-    </div>
+    </GlobalContainer>
   );
 }
 
