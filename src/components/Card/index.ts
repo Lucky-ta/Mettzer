@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const CardHomeContainer = styled.main`
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     margin: 1.2em;
     margin-top: 3.6em;
     padding-bottom: 5.3em;
@@ -12,6 +12,8 @@ export const CardHomeContainer = styled.main`
 `;
 
 export const CardContainer = styled.div`
+    display: flex;
+    flex-direction: column;
     border: 1px solid #00db87;
     border-radius: 8px;
     padding: 1em;
@@ -23,6 +25,7 @@ export const CardContainer = styled.div`
 `;
 
 export const CardTitle = styled.h2`
+    font-size: 1.1em;
 `;
 
 export const CardAuthor = styled.p`
@@ -38,13 +41,16 @@ export const CardType = styled.p`
 export const CardDescription = styled.p`
     word-wrap: break-word;
     font-style: oblique;
+
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
 `;
 
 export const CardUrl = styled.p`
     font-size: 0.9em;
-    margin: auto;
-    margin-left: 0;
-    margin-top: 1em;
+    align-self: flex-start;
 
     &&:hover {
         cursor: pointer;
@@ -54,8 +60,8 @@ export const CardUrl = styled.p`
 `;
 
 export const FavoriteButtonContainer = styled.div`
-    text-align: end;
-    
+    text-align: center;
+    padding-left: 1em;
 `;
 
 export const CardFavoriteButton = styled.button`
@@ -84,4 +90,6 @@ export const CardFlexContainer = styled.div`
     flex-direction: column;
     gap: 0.2em;
     font-size: 1.1em;
+    height: 100%;
+    justify-content: space-between;
 `;
