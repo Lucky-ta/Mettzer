@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { AiOutlineStar } from 'react-icons/ai';
 import {
   CardAuthor,
@@ -19,6 +19,7 @@ type CardPropsShape = {
 };
 
 function Card({ article }: CardPropsShape) {
+  const [isFavorite, setIsFavorite] = useState(false);
   const addStorageArticle = (newArticle: ArticleShape) => {
     const currentStorage = JSON.parse(
       localStorage.getItem('favoritesArticles'),
@@ -51,10 +52,27 @@ function Card({ article }: CardPropsShape) {
     );
 
     if (isArticleInStorage) {
+      setIsFavorite(false);
       return removeStorageArticle(article);
     }
+    setIsFavorite(true);
     return addStorageArticle(article);
   };
+
+  const isArticleInStoraged = () => {
+    const currentStorage = JSON.parse(
+      localStorage.getItem('favoritesArticles'),
+    );
+
+    const isArticleInStorage = currentStorage.some(
+      (currentArticle: ArticleShape) => currentArticle.id === article.id,
+    );
+    setIsFavorite(isArticleInStorage);
+  };
+
+  useEffect(() => {
+    isArticleInStoraged();
+  }, [isFavorite]);
 
   return (
     <CardContainer>
@@ -70,7 +88,7 @@ function Card({ article }: CardPropsShape) {
             aria-label="button"
             type="button"
           >
-            <AiOutlineStar />
+            <AiOutlineStar color={isFavorite && 'yellow'} />
           </CardFavoriteButton>
         </FavoriteButtonContainer>
       </CardHeader>
