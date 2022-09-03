@@ -51,6 +51,7 @@ export const CardDescription = styled.p`
 export const CardUrl = styled.p`
     font-size: 0.9em;
     align-self: flex-start;
+    padding-top: 1em;
 
     &&:hover {
         cursor: pointer;

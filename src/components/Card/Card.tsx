@@ -13,6 +13,7 @@ import {
   FavoriteButtonContainer,
 } from '.';
 import { ArticleShape } from '../../contexts/MyContext';
+import openInNewTab from '../../utils/urls/RedirectUrl';
 
 type CardPropsShape = {
   article: ArticleShape;
@@ -96,7 +97,10 @@ function Card({ article }: CardPropsShape) {
         <CardDescription aria-label="description">
           {article.description}
         </CardDescription>
-        <CardUrl aria-label="url">
+        <CardUrl
+          onClick={() => openInNewTab(article.fulltextIdentifier)}
+          aria-label="url"
+        >
           {' '}
           {article.fulltextIdentifier}
         </CardUrl>
