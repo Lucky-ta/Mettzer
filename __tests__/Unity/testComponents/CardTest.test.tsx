@@ -2,10 +2,20 @@ import React from 'react';
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import Card from '../../../src/components/Card/Card';
+import { ArticleShape } from '../../../src/contexts/MyContext';
 
 describe('Test Card component', () => {
+  const aritcleMock: ArticleShape = {
+    authors: 'Lucas',
+    description: 'Lorem ipsum...',
+    fulltextIdentifier: 'www.randomSite.com',
+    title: 'HIV',
+    topics: 'Vaccine',
+    id: '123456',
+  };
+
   beforeEach(() => {
-    render(<Card />);
+    render(<Card article={aritcleMock} />);
   });
 
   it('Card component must have a article title', () => {

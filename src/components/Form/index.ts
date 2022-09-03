@@ -6,6 +6,7 @@ export const FormContainer = styled.div`
     margin-right: 2em;
     margin-top: 2em;
     align-items: center;
+    justify-content: center;
 
     input[type=text]:focus {
         outline: none !important;

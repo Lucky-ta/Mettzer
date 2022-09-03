@@ -21,6 +21,19 @@ type CardPropsShape = {
 
 function Card({ article }: CardPropsShape) {
   const [isFavorite, setIsFavorite] = useState(false);
+
+  const isArticleInStoraged = () => {
+    const currentStorage = JSON.parse(
+      localStorage.getItem('favoritesArticles'),
+    );
+
+    const isArticleInStorage = currentStorage.some(
+      (currentArticle: ArticleShape) => currentArticle.id === article.id,
+    );
+    setIsFavorite(isArticleInStorage);
+    return isArticleInStorage;
+  };
+
   const addStorageArticle = (newArticle: ArticleShape) => {
     const currentStorage = JSON.parse(
       localStorage.getItem('favoritesArticles'),
@@ -44,13 +57,7 @@ function Card({ article }: CardPropsShape) {
   };
 
   const handleFavoriteButton = () => {
-    const currentStorage = JSON.parse(
-      localStorage.getItem('favoritesArticles'),
-    );
-
-    const isArticleInStorage = currentStorage.some(
-      (currentArticle: ArticleShape) => currentArticle.id === article.id,
-    );
+    const isArticleInStorage = isArticleInStoraged();
 
     if (isArticleInStorage) {
       setIsFavorite(false);
@@ -58,17 +65,6 @@ function Card({ article }: CardPropsShape) {
     }
     setIsFavorite(true);
     return addStorageArticle(article);
-  };
-
-  const isArticleInStoraged = () => {
-    const currentStorage = JSON.parse(
-      localStorage.getItem('favoritesArticles'),
-    );
-
-    const isArticleInStorage = currentStorage.some(
-      (currentArticle: ArticleShape) => currentArticle.id === article.id,
-    );
-    setIsFavorite(isArticleInStorage);
   };
 
   useEffect(() => {
