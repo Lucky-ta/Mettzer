@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { AiOutlineStar } from 'react-icons/ai';
 import {
   CardAuthor,
@@ -12,17 +12,48 @@ import {
   CardUrl,
   FavoriteButtonContainer,
 } from '.';
-import MyContext, { ArticleShape } from '../../contexts/MyContext';
+import { ArticleShape } from '../../contexts/MyContext';
 
 type CardPropsShape = {
   article: ArticleShape;
 };
 
 function Card({ article }: CardPropsShape) {
-  const { isFavorite, setIsFavorite } = useContext(MyContext);
+  const addStorageArticle = (newArticle: ArticleShape) => {
+    const currentStorage = JSON.parse(
+      localStorage.getItem('favoritesArticles'),
+    );
+    localStorage.setItem(
+      'favoritesArticles',
+      JSON.stringify([...currentStorage, newArticle]),
+    );
+  };
+
+  const removeStorageArticle = (repeatedArticle: ArticleShape) => {
+    const currentStorage = JSON.parse(
+      localStorage.getItem('favoritesArticles'),
+    );
+
+    const storageArticleIndex = currentStorage.findIndex(
+      ({ id }) => id === repeatedArticle.id,
+    );
+    currentStorage.splice(storageArticleIndex, 1);
+    localStorage.setItem('favoritesArticles', JSON.stringify(currentStorage));
+  };
 
   const handleFavoriteButton = () => {
-    setIsFavorite(!isFavorite);
+    const currentStorage = JSON.parse(
+      localStorage.getItem('favoritesArticles'),
+    );
+
+    const isArticleInStorage = currentStorage.some(
+      (currentArticle: ArticleShape) => currentArticle.id === article.id,
+    );
+
+    if (isArticleInStorage) {
+      return removeStorageArticle(article);
+    }
+    return addStorageArticle(article);
   };
 
   return (
