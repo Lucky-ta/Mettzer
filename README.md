@@ -1,34 +1,96 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Mettzer (Front-end)
 
-## Getting Started
+Projeto para processo seletivo da Mettzer.
 
-First, run the development server:
+## 🚀 Resumo
 
-```bash
-npm run dev
-# or
-yarn dev
+Este é um site de pesquisas de artigos acadêmicos.
+Aqui você pode pesquisar por algum artigo e os resultados serão mostrados na tela de 5 em 5.
+
+Você pode favoritar seus artigos de preferências, os mesmos serão armazenados no localStorage e podem 
+
+ser vistos na página de favoritos!
+
+## 🚀 Começando
+
+Siga as instruções abaixo para a execução do projeto.
+
+### 🔧 Instalação
+
+1 -
+  Faça um fork do projeto clicando no botão 'Fork' na parte superior direita do seu github.
+
+2 -
+   Faça um clone do projeto copiando o link SSH ou HTTPS disponivel no seu fork e rodando o seguinte comando no seu terminal:
+   ```
+   git clone 'seu link SSH ou HTTPS'
+   ```
+3 -
+  Entre no arquivo e instale as dependencias necessarias:
+  ```
+   cd Mettzer
+  ```
+   ```
+   npm install
+  ```
+  ou
+   ```
+   yarn install
+  ```
+  
+## 📦 Desenvolvimento
+
+Para rodar o projeto em modo de desenvolvimento você precisa ter todas as dependências instaladas.
+Caso não tenha feito, rode o seguinte comando:
+
 ```
+npm install
+```
+ou
+```
+yarn install
+```
+Com as dependências instaladas, basta apenas rodar o seguinte comando para rodar o projeto:
+```
+npm run dev
+```
+ou 
+```
+yarn run dev
+```
+Após o comando, o App vai estar rodando na porta 3000 do seu localhost.
+Para acessa-lo basta colando o seguinte link na URL do seu navegador:
+```
+http://localhost:3000/
+```
+Certifique-se de que não há nenhuma mais nenhuma aplicação rodando na porta 3000 para rodar o projeto!
+## 🛠️ Construído com
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+O projeto foi desenvolvido com as seguintes ferramentas:
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+* [TypeScript](https://www.typescriptlang.org/)
+* [JavaScript](https://www.javascript.com/)
+* [React](https://reactjs.org/)
+* [NextJs](https://nextjs.org/)
+* [Vercel](https://vercel.com/)
+* [Jest](https://jestjs.io/)
+* [RTL](https://testing-library.com/docs/react-testing-library/intro/)
+* [ESlint](https://eslint.org/)
+* [StyledComponents](https://styled-components.com/)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## 📌 Versão e API
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+[Git](https://git-scm.com/) - para controle de versão.
 
-## Learn More
+API utilizada para obter os artigos: https://core.ac.uk:443/api-v2/articles/search/${articleName}
+articleName = nome do artigo pesquisado.
 
-To learn more about Next.js, take a look at the following resources:
+Link para a documentação da API: https://core.ac.uk/docs/#!/all/search
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🚀 Deploy
+O deploy do projeto foi realizado utililizando:
+* [Vercel](https://vercel.com/)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+* Para ver o projeto em funcionamento, basta acessar este link: https://mettzer.vercel.app/
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+---
