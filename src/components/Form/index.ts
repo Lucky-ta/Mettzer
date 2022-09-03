@@ -19,6 +19,7 @@ export const FormInput = styled.input`
     height: 3.4em;
     width: 90%;
     padding-left: 1em;
+    max-width: 40em;
 `;
 
 export const FormButton = styled.button`

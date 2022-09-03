@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const CardHomeContainer = styled.main`
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    margin: 1.2em;
     margin-top: 3.6em;
     padding-bottom: 5.3em;
     gap: 1.4em;
@@ -17,6 +16,9 @@ export const CardContainer = styled.div`
     border: 1px solid #00db87;
     border-radius: 8px;
     padding: 1em;
+    margin-left: 1em;
+    margin-right: 1em;
+
     &&:hover {
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         border: 2px solid #00db87;
