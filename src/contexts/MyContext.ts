@@ -15,8 +15,6 @@ type MyContextDataShape = {
     setArticles: (articles: ArticleShape[]) => void;
     isPageLoading: boolean;
     setIsPageLoading: (value: boolean) => void;
-    isFavorite: boolean;
-    setIsFavorite: (value: boolean) => void;
 }
 
 const initialData: MyContextDataShape = {
@@ -30,8 +28,6 @@ const initialData: MyContextDataShape = {
   setArticles: () => {},
   isPageLoading: false,
   setIsPageLoading: () => {},
-  isFavorite: false,
-  setIsFavorite: () => {},
 };
 
 const MyContext = createContext<MyContextDataShape>(initialData);
